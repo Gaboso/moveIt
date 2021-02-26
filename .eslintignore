@@ -1,0 +1,8 @@
+# Lint all files except .eslintrc.json
+!.eslintrc.json
+
+# Dependencies
+node_modules/
+
+# Js Files
+/*.js

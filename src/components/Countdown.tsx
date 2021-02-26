@@ -1,9 +1,8 @@
-import {useContext} from "react";
+import {useContext} from 'react';
 
-import {CountdownContext} from "../contexts/CountdownContext";
+import {CountdownContext} from 'contexts/CountdownContext';
 
-import styles from '../styles/components/Countdown.module.css';
-
+import styles from 'styles/components/Countdown.module.css';
 
 export function Countdown() {
   const {minutes, seconds, hasFinished, isActive, startCountdown, resetCountdown} = useContext(CountdownContext);
