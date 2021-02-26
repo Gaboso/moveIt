@@ -1,4 +1,4 @@
-import {createContext, ReactNode, useState} from 'react';
+import {createContext, ReactNode, useEffect, useState} from 'react';
 
 import challenges from '../../challenges.json';
 
@@ -33,7 +33,11 @@ export function ChallengesProvider({children}: ChallengesProviderProps) {
 
   const [activeChallenge, setActiveChallenge] = useState(null);
 
-  const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
+  const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
+
+  useEffect(() => {
+    Notification.requestPermission();
+  }, [])
 
   function levelUp() {
     setLevel(level + 1);
@@ -42,15 +46,24 @@ export function ChallengesProvider({children}: ChallengesProviderProps) {
   function startNewChallenge() {
     const randomChallenges = Math.floor(Math.random() * challenges.length);
     const challenge = challenges[randomChallenges];
-    setActiveChallenge(challenge)
+
+    setActiveChallenge(challenge);
+
+    new Audio('/notification.mp3').play();
+
+    if (Notification.permission === 'granted') {
+      new Notification('New challenge 😎🔥', {
+        body: `Earn ${challenge.amount}xp!`
+      });
+    }
   }
 
   function resetChallenge() {
-    setActiveChallenge(null)
+    setActiveChallenge(null);
   }
 
   function completeChallenge() {
-    if(!activeChallenge){
+    if (!activeChallenge) {
       return;
     }
 
@@ -58,8 +71,8 @@ export function ChallengesProvider({children}: ChallengesProviderProps) {
 
     let finalExperience = currentExperience + amount;
 
-    if(finalExperience >= experienceToNextLevel){
-      finalExperience =  finalExperience - experienceToNextLevel;
+    if (finalExperience >= experienceToNextLevel) {
+      finalExperience = finalExperience - experienceToNextLevel;
       levelUp();
     }
 
