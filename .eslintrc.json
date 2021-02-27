@@ -1,9 +1,8 @@
 {
   "extends": [
     "airbnb",
-    "prettier",
-    "react-app",
     "eslint:recommended",
+    "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended"
@@ -32,27 +31,38 @@
     "jest": true
   },
   "rules": {
-    "comma-dangle": ["error", {
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "always-multiline"
-    }],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-curly-newline": "off",
-    "react/display-name": 0,
-    "react/prop-types": 0,
-    "react/react-in-jsx-scope": "off",
-    "import/prefer-default-export": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline"
+      }
+    ],
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
         "devDependencies": true
       }
     ],
-    "no-unused-vars": "error",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "no-param-reassign": "off",
     "no-plusplus": [
       "error",
@@ -60,8 +70,18 @@
         "allowForLoopAfterthoughts": true
       }
     ],
-    "react/jsx-props-no-spreading": "off",
-    "react/jsx-wrap-multilines": "off",
+    "no-unused-vars": "error",
+    "prettier/prettier": "error",
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "react/display-name": 0,
+    "react/jsx-curly-newline": "off",
     "react/jsx-filename-extension": [
       "error",
       {
@@ -71,19 +91,23 @@
         ]
       }
     ],
-    "eqeqeq": [
-      "error",
-      "always"
-    ],
-    "quotes": [
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "@typescript-eslint/explicit-function-return-type": [
       "warn",
-      "single",
       {
-        "avoidEscape": true,
-        "allowTemplateLiterals": true
+        "allowExpressions": true,
+        "allowConciseArrowFunctionExpressionsStartingWithVoid": true
       }
     ],
-    "react/jsx-one-expression-per-line": "off"
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ]
   },
   "settings": {
     "import/resolver": {
@@ -92,7 +116,8 @@
           "node_modules",
           "src"
         ]
-      }
+      },
+      "typescript": {}
     }
   }
 }

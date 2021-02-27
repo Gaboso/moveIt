@@ -4,8 +4,15 @@ import {CountdownContext} from 'contexts/CountdownContext';
 
 import styles from 'styles/components/Countdown.module.css';
 
-export function Countdown() {
-  const {minutes, seconds, hasFinished, isActive, startCountdown, resetCountdown} = useContext(CountdownContext);
+export function Countdown(): JSX.Element {
+  const {
+    minutes,
+    seconds,
+    hasFinished,
+    isActive,
+    startCountdown,
+    resetCountdown,
+  } = useContext(CountdownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
@@ -24,28 +31,29 @@ export function Countdown() {
         </div>
       </div>
 
-      {
-        hasFinished ? (
-          <button className={styles.countdownButton} disabled>
-            Cycle ended
-          </button>
-        ) : (
-          <>
-            {isActive ? (
-              <button type="button" className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
-                      onClick={resetCountdown}>
-                Leave cycle
-              </button>
-            ) : (
-              <button type="button" className={styles.countdownButton}
-                      onClick={startCountdown}>
-                Start cycle
-              </button>
-            )}
-          </>
-        )
-      }
-
+      {hasFinished ? (
+        <button className={styles.countdownButton} type="button" disabled>
+          Cycle ended
+        </button>
+      ) : (
+        <>
+          {isActive ? (
+            <button
+              type="button"
+              className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
+              onClick={resetCountdown}>
+              Leave cycle
+            </button>
+          ) : (
+            <button
+              type="button"
+              className={styles.countdownButton}
+              onClick={startCountdown}>
+              Start cycle
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 }
