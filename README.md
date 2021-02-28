@@ -2,9 +2,7 @@
    <img src=".github/media/logo.svg" alt="Move.it" width="300"/>
 </p>
 
-# Move.it
-
-Move.it is a project developed during Next Level Week 4 _[#NLW4](https://github.com/topics/nlw-4)_, with the aim of bringing gamification and healthy productivity to people!
+_Move.it_ is a project developed during _Next Level Week 4 [#NLW4](https://github.com/topics/nlw-4)_, with the aim of bringing gamification and healthy productivity to people!
 
 ![Screenshot](.github/media/screen.png)
 
@@ -32,7 +30,6 @@ yarn lint
 ```bash
 yarn dev
 ```
-
 
 ----
 
