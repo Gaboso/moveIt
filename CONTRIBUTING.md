@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thanks you so much for your interest in contributing to this project!
+Thank you so much for your interest in contributing to this project!
 
 ## About our deal
 
@@ -12,7 +12,7 @@ If you have an idea for an enhancement, go ahead and share it via an issue, but 
 
 This project is GPL-3.0 licensed, and this means that you can implement and use whatever enhancements you'd like.
 
-## Commits and Code Padronization
+## Commits and Code
 
 Be clear in your commit messages and use the following [Eslint Lint Rules](.eslintrc.json).
 
