@@ -6,15 +6,7 @@
 
 Move.it is a project developed during Next Level Week 4 _[#NLW4](https://github.com/topics/nlw-4)_, with the aim of bringing gamification and healthy productivity to people!
 
-<tr>
-  <td>
-    <img src=".github/media/screen_1.png" alt="Screenshot 1" /> 
-  </td>
-  <td>
-    <img src=".github/media/screen_2.png" alt="Screenshot 2" />
-  </td>
-</tr>
-
+![Screenshot](.github/media/screen.png)
 
 #### Requirements :earth_americas:
 
